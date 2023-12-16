@@ -1,12 +1,20 @@
+import { Paper } from '@mui/material'
 import styles from './Error.module.css'
 
 const Error = ({ error }) => {
     return (
-        <div className={styles.errorContainer}>
-            <h1 className={styles.errorMessage}>
-                {error}
-            </h1>
-        </div>
+        <Paper sx={{
+            backgroundColor: 'rgba(255, 0, 0, 0.75)',
+            width: '100%',
+            padding: '3%',
+            marginTop: '25px',
+            color: '#fff',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            textAlign: 'center'
+        }}>
+            {error}
+        </Paper>
     )
 }
 

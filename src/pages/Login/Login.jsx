@@ -17,6 +17,7 @@ import { useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import Error from '../../components/Error/Error';
+import { Paper } from '@mui/material';
 
 function Copyright(props) {
     return (
