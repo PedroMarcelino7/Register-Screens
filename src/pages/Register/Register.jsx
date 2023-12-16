@@ -65,7 +65,7 @@ export default function Register() {
 
         console.log(name, lastName, email, password)
         setSuccess(true)
-        
+
         setTimeout(() => {
             navigate("/Register-Screens/login")
         }, 2000)
@@ -174,13 +174,15 @@ export default function Register() {
                     <Grid container justifyContent="flex-end">
                         <Grid item>
                             <NavLink to='/Register-Screens/login'>
-                                Already have an account? Sign in
+                                <Link>
+                                    Already have an account? Sign in
+                                </Link>
                             </NavLink>
                         </Grid>
                     </Grid>
                 </Box>
             </Box>
-            
+
             {/* <Copyright sx={{ mt: 5 }} /> */}
         </Container>
     );

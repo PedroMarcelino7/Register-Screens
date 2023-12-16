@@ -11,13 +11,10 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import UseAuth from '../../hooks/useAuth';
 import { useState } from 'react';
-
 import { NavLink } from 'react-router-dom';
 import Error from '../../components/Error/Error';
-import { Paper } from '@mui/material';
 
 function Copyright(props) {
     return (
@@ -119,12 +116,17 @@ export default function Login() {
                     <Grid container justifyContent='space-between'>
                         <Grid item>
                             <NavLink to='/Register-Screens/password' >
-                                Forgot password?
+                                <Link>
+                                    Forgot password?
+                                </Link>
                             </NavLink>
                         </Grid>
                         <Grid item>
+
                             <NavLink to='/Register-Screens/register'>
-                                Don't have an account? Sign Up
+                                <Link>
+                                    Don't have an account? Sign Up
+                                </Link>
                             </NavLink>
                         </Grid>
                     </Grid>
