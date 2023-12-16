@@ -52,7 +52,7 @@ export default function Register() {
             return
         }
 
-        const res = signUp(email, password)
+        const res = signUp(name, lastName, email, password)
 
         if (res) {
             setError(res)
@@ -60,20 +60,10 @@ export default function Register() {
             return
         }
 
+        console.log(name, lastName, email, password)
         alert("Usuário cadastrado com sucesso!")
         navigate("/Register-Screens/login")
     }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const data = new FormData(e.currentTarget);
-
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
-    };
 
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -93,7 +83,7 @@ export default function Register() {
                     <Typography component="h1" variant="h5">
                         Sign up
                     </Typography>
-                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                    <Box component="form" noValidate sx={{ mt: 3 }}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
                                 <TextField

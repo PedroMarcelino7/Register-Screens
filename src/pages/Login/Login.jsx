@@ -43,20 +43,19 @@ export default function Login() {
     const handleLogin = (e) => {
         e.preventDefault();
 
-    if (!email || !password) {
-        setError("Preencha todos os campos");
-        return;
-    }
+        if (!email || !password) {
+            setError("Preencha todos os campos");
+            return;
+        }
 
-    const res = signIn(email, password);
+        const res = signIn(email, password);
 
-    if (res) {
-        setError(res);
-        return;
-    }
+        if (res) {
+            setError(res);
+            return;
+        }
 
-    navigate("/Register-Screens");
-
+        navigate("/Register-Screens");
     }
 
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth'; // Change to lowercase for consistency
+import useAuth from '../../hooks/useAuth';
 
 const Home = () => {
     const { signOut } = useAuth();
