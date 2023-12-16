@@ -82,8 +82,6 @@ export default function Register() {
                     alignItems: 'center',
                 }}
             >
-                {success && <Success />}
-
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                     <LockOutlinedIcon />
                 </Avatar>
@@ -91,6 +89,8 @@ export default function Register() {
                 <Typography component="h1" variant="h5">
                     Sign up
                 </Typography>
+
+                {success && <Success />}
 
                 {error !== '' && <Error error={error} />}
 

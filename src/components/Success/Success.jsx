@@ -7,7 +7,7 @@ const Success = () => {
             backgroundColor: 'rgba(0, 128, 0, 0.85)',
             width: '100%',
             padding: '3%',
-            marginBottom: '25px',
+            marginTop: '25px',
             color: '#fff',
             fontSize: '1rem',
             fontWeight: 'bold',
