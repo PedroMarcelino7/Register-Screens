@@ -158,7 +158,7 @@ export default function Register() {
                         <Grid item xs={12}>
                             <FormControlLabel
                                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                                label="I want to receive updates via email."
+                                label="I want to receive updates."
                             />
                         </Grid>
                     </Grid>
@@ -180,7 +180,8 @@ export default function Register() {
                     </Grid>
                 </Box>
             </Box>
-            <Copyright sx={{ mt: 5 }} />
+            
+            {/* <Copyright sx={{ mt: 5 }} /> */}
         </Container>
     );
 }
