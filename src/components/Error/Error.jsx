@@ -1,5 +1,4 @@
 import { Paper } from '@mui/material'
-import styles from './Error.module.css'
 
 const Error = ({ error }) => {
     return (
