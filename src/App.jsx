@@ -3,6 +3,7 @@ import RoutesApp from './routes/RoutesApp'
 import { AuthProvider } from './context/auth'
 
 function App() {
+
   return (
     <>
       <AuthProvider>

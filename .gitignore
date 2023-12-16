@@ -1,6 +1,5 @@
- - Estilizar mensagem de erro
-    Criar um componente e importar o componente para as páginas de Login e Register
-
  - Estilizar alert (cadastro concluído com sucesso na página de Register)
 
  - Criar tela de Forgot Password (e linkar com o botão de forgot password)
+
+ - Arrumar dark theme
