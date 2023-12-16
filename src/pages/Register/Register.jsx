@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,10 +11,10 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { NavLink, useNavigate } from 'react-router-dom';
 import UseAuth from '../../hooks/useAuth';
 import Error from '../../components/Error/Error';
+import Success from '../../components/Success/Success';
 
 function Copyright(props) {
     return (
@@ -40,6 +40,8 @@ export default function Register() {
     const navigate = useNavigate()
     const { signUp } = UseAuth()
 
+    const [success, setSuccess] = useState(false)
+
     const handleSignUp = (e) => {
         e.preventDefault()
 
@@ -62,8 +64,11 @@ export default function Register() {
         }
 
         console.log(name, lastName, email, password)
-        alert("Usuário cadastrado com sucesso!")
-        navigate("/Register-Screens/login")
+        setSuccess(true)
+        
+        setTimeout(() => {
+            navigate("/Register-Screens/login")
+        }, 2000)
     }
 
     return (
@@ -77,6 +82,8 @@ export default function Register() {
                     alignItems: 'center',
                 }}
             >
+                {success && <Success />}
+
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                     <LockOutlinedIcon />
                 </Avatar>
@@ -93,7 +100,6 @@ export default function Register() {
                             <TextField
                                 autoComplete="given-name"
                                 name="firstName"
-                                required
                                 fullWidth
                                 id="firstName"
                                 label="First Name"
@@ -104,7 +110,6 @@ export default function Register() {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                required
                                 fullWidth
                                 id="lastName"
                                 label="Last Name"
@@ -116,7 +121,6 @@ export default function Register() {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                required
                                 fullWidth
                                 id="email"
                                 label="Email Address"
@@ -128,7 +132,6 @@ export default function Register() {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                required
                                 fullWidth
                                 name="password"
                                 label="Password"
@@ -141,7 +144,6 @@ export default function Register() {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                required
                                 fullWidth
                                 name="passwordConfirmation"
                                 label="Confirm Password"
