@@ -6,9 +6,9 @@ import Register from '../pages/Register/Register'
 import UseAuth from '../hooks/useAuth'
 
 const Private = ({ Item }) => {
-    const signed = false
+    const { signed } = UseAuth()
 
-    return signed > 0 ? <Item /> : <Login />
+    return signed ? <Item /> : <Login />
 }
 
 const RoutesApp = () => {
@@ -16,9 +16,9 @@ const RoutesApp = () => {
         <BrowserRouter>
             <Fragment>
                 <Routes>
-                    <Route exact path='/' element={<Private Item={Home} />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route exact path='/register' element={<Register />} />
+                    <Route exact path='/Register-Screens' element={<Private Item={Home} />} />
+                    <Route path='/Register-Screens/login' element={<Login />} />
+                    <Route exact path='/Register-Screens/register' element={<Register />} />
                 </Routes>
             </Fragment>
         </BrowserRouter>

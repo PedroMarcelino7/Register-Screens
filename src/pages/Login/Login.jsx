@@ -40,35 +40,24 @@ export default function Login() {
     const { signIn } = UseAuth()
     const navigate = useNavigate()
 
-    const handleLogin = () => {
-        if (!email || !password) {
-            setError("Preencha todos os campos")
-            
-            return
-        }
-
-        const res = signIn(email, password)
-
-        if (res) {
-            setError(res)
-
-            return
-        }
-
-        navigate("/")
-    }
-
-
-    const handleSubmit = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
 
-        const data = new FormData(e.currentTarget);
+    if (!email || !password) {
+        setError("Preencha todos os campos");
+        return;
+    }
 
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
-    };
+    const res = signIn(email, password);
+
+    if (res) {
+        setError(res);
+        return;
+    }
+
+    navigate("/Register-Screens");
+
+    }
 
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -90,7 +79,7 @@ export default function Login() {
                         Sign in
                     </Typography>
 
-                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                    <Box component="form" noValidate sx={{ mt: 1 }}>
                         <TextField
                             margin="normal"
                             required
@@ -136,12 +125,12 @@ export default function Login() {
                         </Button>
                         <Grid container justifyContent='space-between'>
                             <Grid item>
-                                <NavLink to='/forgotPassword' >
+                                <NavLink to='/Register-Screens/forgotPassword' >
                                     Forgot password?
                                 </NavLink>
                             </Grid>
                             <Grid item>
-                                <NavLink to='/register'>
+                                <NavLink to='/Register-Screens/register'>
                                     {"Don't have an account? Sign Up"}
                                 </NavLink>
                             </Grid>

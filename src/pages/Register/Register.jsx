@@ -61,7 +61,7 @@ export default function Register() {
         }
 
         alert("Usuário cadastrado com sucesso!")
-        navigate("/login")
+        navigate("/Register-Screens/login")
     }
 
     const handleSubmit = (e) => {
@@ -182,7 +182,7 @@ export default function Register() {
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <NavLink to='/login'>
+                                <NavLink to='/Register-Screens/login'>
                                     Already have an account? Sign in
                                 </NavLink>
                             </Grid>

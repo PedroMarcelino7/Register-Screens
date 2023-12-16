@@ -6,7 +6,7 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState()
 
     useEffect(() => {
-        const userToken = localStorage.getItem("User_token")
+        const userToken = localStorage.getItem("user_token")
         const usersStorage = localStorage.getItem("users_db")
 
         if (userToken && usersStorage) {
@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
                 (user) => user.email === JSON.parse(userToken).email
             )
 
-            if (hasUser) {
+            if (hasUser.length) {
                 setUser(hasUser[0])
             }
         }
