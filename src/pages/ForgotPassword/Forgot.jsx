@@ -53,9 +53,10 @@ export default function Forgot() {
                     alignItems: 'center',
                 }}
             >
-                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+
+                {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                     <LockOutlinedIcon />
-                </Avatar>
+                </Avatar> */}
 
                 <Typography component="h1" variant="h5">
                     Change password
@@ -92,7 +93,7 @@ export default function Forgot() {
                     </Button>
                     <Grid container justifyContent='space-between'>
                         <Grid item>
-                            <NavLink to='/Register-Screens/login' >
+                            <NavLink to='/Register-Screens/login'>
                                 <Link>
                                     Already have an account? Sign in
                                 </Link>
